@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.UserMapper">
+
+    <resultMap id="userResultMap" type="com.example.springboot.entity.User">
+        <id property="userid" column="db_userid"/>
+        <result property="username" column="db_username"/>
+        <result property="password" column="db_pwd"/>
+        <result property="sex" column="db_sex"/>
+        <result property="phone" column="db_phone"/>
+        <result property="headimg" column="db_headimg"/>
+        <result property="flag" column="db_flag"/>
+    </resultMap>
+
+    <select id="list" resultMap="userResultMap">
+        select * from users;
+    </select>
+
+    <select id="getUserNameAndPassword" resultMap="userResultMap">
+        select * from users where db_username = #{username} and db_pwd = #{password}
+    </select>
+</mapper>
