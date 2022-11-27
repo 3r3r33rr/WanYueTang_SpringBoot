@@ -36,4 +36,6 @@ public class UserController {
         userService.register(user);
         return Result.success();
     }
+
+
 }
