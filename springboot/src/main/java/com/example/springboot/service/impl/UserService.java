@@ -29,4 +29,9 @@ public class UserService implements IUserService {
         BeanUtils.copyProperties(user,loginDTO);
         return loginDTO;
     }
+
+    @Override
+    public void register(User user) {
+        userMapper.register(user);
+    }
 }

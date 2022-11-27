@@ -10,4 +10,6 @@ public interface IUserService {
     List<User> list();
 
     LoginDTO login(LoginRequest request);
+
+    void register(User user);
 }

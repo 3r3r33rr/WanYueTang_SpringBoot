@@ -10,4 +10,6 @@ public interface UserMapper {
     List<User> list();
 
     User getUserNameAndPassword(LoginRequest request);
+
+    void register(User user);
 }

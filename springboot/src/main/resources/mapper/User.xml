@@ -9,10 +9,14 @@
         <result property="username" column="db_username"/>
         <result property="password" column="db_pwd"/>
         <result property="sex" column="db_sex"/>
-        <result property="phone" column="db_phone"/>
+        <result property="phone" column="db_phonnum"/>
         <result property="headimg" column="db_headimg"/>
         <result property="flag" column="db_flag"/>
     </resultMap>
+    <insert id="register">
+        insert into users(db_username,db_pwd,db_sex,db_phonnum)
+        values (#{username},#{password},#{sex},#{phone})
+    </insert>
 
     <select id="list" resultMap="userResultMap">
         select * from users;

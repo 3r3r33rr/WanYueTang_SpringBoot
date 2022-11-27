@@ -16,15 +16,24 @@ public class UserController {
     @Autowired
     IUserService userService;
 
-    @GetMapping("/list")
+    //显示全部用户信息
+    @GetMapping("list")
     public Result list(){
         List<User> users = userService.list();
         return Result.success(users);
     }
 
+    //用户登录
     @PostMapping("login")
     public Result login(@RequestBody LoginRequest request){
         LoginDTO loginDTO = userService.login(request);
         return Result.success(loginDTO);
+    }
+
+    //用户注册
+    @PostMapping("register")
+    public Result register(@RequestBody User user){
+        userService.register(user);
+        return Result.success();
     }
 }
