@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.BookMapper">
+
+    <resultMap id="bookResultMap" type="com.example.springboot.entity.Book">
+        <id property="drugid" column="db_drugid"></id>
+        <result property="useage" column="db_useage"></result>
+        <result property="taboo" column="db_taboo"></result>
+        <result property="function" column="db_function"></result>
+        <result property="title" column="db_title"></result>
+    </resultMap>
+    <select id="list" resultMap="bookResultMap">
+        select * from directions;
+    </select>
+
+
+</mapper>
