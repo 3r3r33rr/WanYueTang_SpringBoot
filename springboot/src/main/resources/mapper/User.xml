@@ -25,4 +25,8 @@
     <select id="getUserNameAndPassword" resultMap="userResultMap">
         select * from users where db_username = #{username} and db_pwd = #{password}
     </select>
+
+    <select id="checkUserName" resultMap="userResultMap">
+        select db_username from users where db_username = #{username}
+    </select>
 </mapper>

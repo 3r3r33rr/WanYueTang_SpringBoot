@@ -12,4 +12,6 @@ public interface UserMapper {
     User getUserNameAndPassword(LoginRequest request);
 
     void register(User user);
+
+    User checkUserName(User user);
 }
